@@ -37,13 +37,11 @@ def prcp():
     prcp_year_query = text("""
                 SELECT
                     date,
-                    ROUND(avg(prcp), 2) as avg_prcp
+                    prcp
                 FROM
                     measurement
                 WHERE
                     date >= '2016-08-23'
-                GROUP BY
-                    date;
             """)
 
     prcp_year_df = pd.read_sql(prcp_year_query, hawaii_engine)
