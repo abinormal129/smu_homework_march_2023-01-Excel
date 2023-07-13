@@ -26,7 +26,7 @@ def welcome():
         <h4><a href="/api/v1.0/precipitation" target="_blank">Past Year Precipitation Analysis</a><h4><br/>
         <h4><a href="/api/v1.0/stations" target="_blank">List of Observation Station</a><h4><br/>
         <h4><a href="/api/v1.0/tobs" target="_blank">Past Year Temperatures</a><h4><br/>
-        <h4><a href="/api/v1.0/2016-08-23>" target="_blank">Min, Max, and Avg Temps: 2016-08-23</a><h4><br/>
+        <h4><a href="/api/v1.0/2016-08-23" target="_blank">Min, Max, and Avg Temps: 2016-08-23</a><h4><br/>
         <h4><a href="/api/v1.0/2016-08-23/2016-09-23" target="_blank">Mix, Max, and Avg Temps: from 2016-08-23 to 2016-09-23</a><h4><br/>
         """
     )
@@ -41,7 +41,7 @@ def prcp():
                 FROM
                     measurement
                 WHERE
-                    date >= '2016-08-23'
+                    date >= '2016-08-23';
             """)
 
     prcp_year_df = pd.read_sql(prcp_year_query, hawaii_engine)
